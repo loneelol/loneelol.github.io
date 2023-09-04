@@ -14,6 +14,23 @@
             margin: 0;
         }
 
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+
+        #audio-container {
+            display: none;
+        }
+
         audio {
             width: 100%;
             max-width: 400px;
@@ -32,12 +49,25 @@
     <div id="__next">
         <div>
             <main class="u_ee11cbb19052e40b07aac0ca060c23ee_main-cont__zmSkV">
-                <audio id="aud-mp" loop autoplay controls>
-                    <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
+                <div id="overlay">
+                    <button onclick="startMusic()">Click to Enter</button>
+                </div>
+                <div id="audio-container">
+                    <audio id="aud-mp" loop autoplay controls>
+                        <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
             </main>
         </div>
     </div>
+
+    <script>
+        function startMusic() {
+            document.getElementById("overlay").style.display = "none";
+            document.getElementById("audio-container").style.display = "block";
+            document.getElementById("aud-mp").play();
+        }
+    </script>
 </body>
 </html>
