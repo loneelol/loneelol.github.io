@@ -9,10 +9,29 @@
             height: 100%;
             margin: 0;
             cursor: url('lv.cur'), auto;
+            background: url('https://media.discordapp.net/attachments/972533899462836334/1016892896206655508/pfps-57cXSR.gif') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        #audio-container {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    test
+    <audio controls loop autoplay id="background-music">
+        <source src="music.mp4" type="audio/mp4">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="audio-container">
+        Music:
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" min="0" max="1" step="0.1" value="0.5">
+    </div>
 </body>
 </html>
