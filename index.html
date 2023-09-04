@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
+<html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@?</title>
-    <link rel="icon" href="https://cdn.discordapp.com/attachments/1143578981346578513/1144058934915772497/1461ffde24ea3035385572547b84bd8a.png" type="image/png">
     <style>
 
         html, body {
@@ -31,7 +29,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 1);
+            background-color: rgba(0, 0, 0, 1); /* Changed to black */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -179,9 +177,9 @@
                     </div>
                 </div>
                 <div id="overlay">
-                    <div id="click-to-enter" onclick="startMusic()">Click to enter</div>
+                    <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
                 </div>
-                <audio id="aud-mp" loop autoplay>
+                <audio id="aud-mp" loop="" autoplay="">
                     <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
@@ -202,5 +200,8 @@
             });
         }
     </script>
+
+
 </body>
 </html>
+
