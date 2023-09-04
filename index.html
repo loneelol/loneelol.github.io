@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@</title>
     <style>
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            cursor: url('lv.cur'), auto;
-
-        }
-        
         body {
             background-image: url('https://media.discordapp.net/attachments/972533899462836334/1016892896206655508/pfps-57cXSR.gif');
             background-size: cover;
@@ -37,18 +29,32 @@
             z-index: 9999;
         }
 
-        #click-to-enter {
-            font-family: 'Calibri', sans-serif;
-            font-size: 28px;
+        #click-box {
+            backdrop-filter: blur(20px);
+            border-radius: 10px;
+            padding: 20px;
             text-align: center;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5); /* Glow effect */
-            cursor: url('lv.cur'), auto;            
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
-        #click-to-enter:hover {
-            text-shadow: none;
-            cursor: url('lv.cur'), auto;
+        #profile-picture {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        #quote {
+            font-family: 'Calibri', sans-serif;
+            font-size: 28px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5); /* Glow effect */
+            margin: 0;
+        }
+
+        #discord-widget {
+            padding-top: 13px;
+            padding-bottom: 13px;
         }
 
         audio {
@@ -60,8 +66,15 @@
     <div id="__next">
         <div>
             <main class="u_ee11cbb19052e40b07aac0ca060c23ee_main-cont__zmSkV">
+                <div id="click-box">
+                    <img id="profile-picture" src="https://cdn.discordapp.com/attachments/1143578981346578513/1144058934915772497/1461ffde24ea3035385572547b84bd8a.png" alt="Profile Picture" draggable="false">
+                    <p class="u_ee11cbb19052e40b07aac0ca060c23ee_under__E9n1x u_ee11cbb19052e40b07aac0ca060c23ee_font-r__Fxh_B" id="quote">Respect yourself enough to walk away from anything that no longer serves you, grows you, or makes you</p>
+                    <div class="u_ee11cbb19052e40b07aac0ca060c23ee_dsb__GGRLW" id="discord-widget">
+                        <img src="https://discord.c99.nl/widget/theme-4/205500294308560896.png" alt="" draggable="false">
+                    </div>
+                </div>
                 <div id="overlay">
-                    <div id="click-to-enter" onclick="startMusic()">Click to Enter...</div>
+                    <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
                 </div>
                 <audio id="aud-mp" loop autoplay>
                     <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
