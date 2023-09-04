@@ -177,9 +177,12 @@
                     </div>
                 </div>
                 <div id="overlay">
-                    <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
-                </div>
-                <audio id="aud-mp" loop="" autoplay="">
+        <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
+    </div>
+    <audio id="aud-mp" loop>
+        <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
                     <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
@@ -187,20 +190,13 @@
         </div>
     </div>
     <script>
+        // JavaScript function to start playing the music
         function startMusic() {
             document.getElementById("overlay").style.display = "none";
-            document.getElementById("aud-mp").style.display = "block";
-            document.getElementById("aud-mp").play();
-
-            document.body.style.backdropFilter = "none";
-
-            var icons = document.querySelectorAll(".icon");
-            icons.forEach(function (icon) {
-                icon.classList.add("glow-icon");
-            });
+            var audio = document.getElementById("aud-mp");
+            audio.play();
         }
     </script>
-
 
 </body>
 </html>
