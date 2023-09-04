@@ -75,7 +75,7 @@
         }
         
         #click-to-enter:hover {
-            text-shadow: none;
+            text-shadow: none; 
         }
 
         .icon-container {
@@ -88,6 +88,7 @@
             color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
             transition: transform 0.2s ease;
+        }
 
         .icon a {
             text-decoration: none;
@@ -95,11 +96,11 @@
         }
 
         .icon a:visited {
-            color: inherit;
+            color: inherit; 
         }
 
         .icon-container:hover .icon {
-            transform: scale(1.2); 
+            transform: scale(1.2);
         }
 
         audio {
@@ -174,11 +175,15 @@
             document.getElementById("aud-mp").style.display = "block";
             document.getElementById("aud-mp").play();
             
+            // Add the glow effect to the icons after the overlay is gone
             var icons = document.querySelectorAll(".icon");
             icons.forEach(function (icon) {
                 icon.classList.add("glow-icon");
             });
         }
     </script>
+    <head>
+        <link rel="icon" href="https://cdn.hris.rip/gun-solid.svg" type="image/svg+xml">
+    </head>
 </body>
 </html>
