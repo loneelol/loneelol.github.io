@@ -4,7 +4,8 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="https://cdn.discordapp.com/attachments/1115455392898613319/1148364346905342082/emote.png" type="image/png">
-    <title>@?</title>
+    <title>@Lone Star Kai</title>
+	<h1 id="website-name">@</h1>
     <style>
       html,
       body {
@@ -199,5 +200,42 @@
         });
       }
     </script>
+
+<script>
+        // JavaScript function for the typing animation
+        function animateWebsiteName() {
+            const websiteName = document.getElementById("website-name");
+            const text = "@Lone Star Kai";
+            const delay = 100; // Delay between characters in milliseconds
+            let index = 0;
+
+            function type() {
+                if (index < text.length) {
+                    websiteName.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(type, delay);
+                } else {
+                    setTimeout(erase, delay * 2);
+                }
+            }
+
+            function erase() {
+                if (index >= 0) {
+                    websiteName.textContent = text.substring(0, index);
+                    index--;
+                    setTimeout(erase, delay);
+                } else {
+                    setTimeout(type, delay);
+                }
+            }
+
+            // Start the animation
+            type();
+        }
+
+        // Call the animation function when the page loads
+        window.onload = animateWebsiteName;
+    </script>
+	  
   </body>
 </html>
