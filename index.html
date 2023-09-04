@@ -199,58 +199,19 @@
         });
       }
     </script>
+    <script>
+      const titles = ["@", "@L", "@Lo", "@Lon", "@Lone", "@Lone S", "@Lone St", "@Lone Sta", "@Lone Star", "@Lone Star K", "@Lone Star Ka", "@Lone Star Kai", "@Lone Star Ka", "@Lone Star K", "@Lone Star ", "@Lone Sta", "@Lone St", "@Lone St", "@Lone S", "@Lone", "@Lon", "@Lo", "@L"];
+      let currentIndex = 0;
 
-<script>
+      function changeTitle() {
+        document.title = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
+      }
 
-        setTimeout(function() {
-            document.title = "@";
-        }, 1000); // Change after 2 seconds
-
-
-        setTimeout(function() {
-            document.title = "@L";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lo";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lon";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone S";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone St";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone Sta";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone Star";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone Star K";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone Star Ka";
-        }, 1000);
-
-	setTimeout(function() {
-            document.title = "@Lone Star Kai";
-        }, 1000);
+      function startAnimation() {
+        setInterval(changeTitle, 500);
+      }
+      startAnimation();
     </script>
-	  
   </body>
 </html>
