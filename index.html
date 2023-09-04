@@ -183,21 +183,20 @@
         <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-                    <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
-                    Your browser does not support the audio element.
-                </audio>
             </main>
         </div>
     </div>
     <script>
-        // JavaScript function to start playing the music
         function startMusic() {
-            document.getElementById("overlay").style.display = "none";
             var audio = document.getElementById("aud-mp");
-            audio.play();
+            var clickToEnter = document.getElementById("click-to-enter");
+            
+            if (audio.paused) {
+                audio.play();
+                clickToEnter.style.display = "none";
+            }
         }
     </script>
-
 </body>
 </html>
 
