@@ -13,22 +13,25 @@
             background-size: cover;
         }
 
-        audio {
-            display: none;
+        #audio-container {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop muted id="background-music">
+    <audio autoplay loop id="background-music">
         <source src="music.mp4" type="audio/mp4">
         Your browser does not support the audio element.
     </audio>
-
-    <script>
-        window.addEventListener('DOMContentLoaded', function () {
-            var audio = document.getElementById('background-music');
-            audio.muted = false;
-        });
-    </script>
+    <div id="audio-container">
+        Background Music:
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" name="volume" min="0" max="1" step="0.1" value="0.5">
+    </div>
 </body>
 </html>
