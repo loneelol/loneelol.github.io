@@ -101,7 +101,7 @@
 
         .icon {
             font-size: 48px; 
-            color: #fff; /* This sets the color to white */
+            color: #fff;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
             transition: transform 0.2s ease;
             cursor: url('lv.cur'), auto;
@@ -126,86 +126,9 @@
         audio {
             display: none;
         }
-    #music-controller {
-            position: absolute;
-            bottom: 20px;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        #music-profile-picture {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        #music-controls {
-            display: flex;
-            align-items: center;
-        }
-
-        #volume-control {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        #volume-slider {
-            width: 100px;
-            margin-top: 10px;
-        }
-
-        #current-time, #total-duration, #play-button{
-            font-family: 'Calibri', sans-serif;
-            font-size: 28px;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-            content: attr(data-content); /* Add this line to set content from the "data-content" attribute */
-        }
-        
-        /* Hide the play button by default */
-        #aud-mp:not([paused]) + #play-button {
-            display: block;
-        }
-
-        #pause-button {
-            font-family: 'Calibri', sans-serif;
-            font-size: 18px; /* Adjust the font size for the scaled-down pause button */
-            cursor: pointer;
-            color: #fff;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-            content: attr(data-content); /* Add this line to set content from the "data-content" attribute */
-        }
-
-        .pause-icon, .play-icon {
-            color: white;
-            font-size: 24px; /* Adjust the font size as needed */
-        }
     </style>
 </head>
 <body>
-        <div id="music-controller">
-            <img id="music-profile-picture" src="musicpfp.png" alt="Music Profile Picture">
-            <div id="music-controls">
-                <div id="volume-control">
-                    <input id="volume-slider" type="range" min="0" max="100" step="1" value="50" oninput="adjustVolume(this.value)">
-                </div>
-                <div id="song-duration-bar">
-                    <span id="current-time">0:00</span>
-                    <input id="song-progress" type="range" min="0" max="100" step="1" value="0" oninput="seekSong(this.value)">
-                    <span id="total-duration">0:00</span>
-                    <div class="icon-container" id="pause-button-container" style="display: block;" onclick="togglePlayPause()">
-                        <span class="icon pause-icon">▐▐</span>
-                    </div>
-                    <div class="icon-container" id="play-button-container" style="display: none;" onclick="togglePlayPause()">
-                        <span class="icon play-icon">▶</span>
-                    </div>
-                </div>
-            </div>
-        </div>
   <link rel="icon" href="https://cdn.hris.rip/gun-solid.svg" type="image/svg+xml">
     <div id="__next">
         <div>
@@ -258,7 +181,7 @@
                 <div id="overlay">
                     <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
                 </div>
-                <audio id="aud-mp" loop autoplay>
+                <audio id="aud-mp" loop="" autoplay="">
                     <source src="https://cdn.discordapp.com/attachments/1071183510255181974/1144012531107639556/Juice_WRLD_-_Goyard_Bag_Good_Quality_Unreleased.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
@@ -270,67 +193,33 @@
             document.getElementById("overlay").style.display = "none";
             document.getElementById("aud-mp").style.display = "block";
             document.getElementById("aud-mp").play();
-    
             document.body.style.backdropFilter = "none";
-    
+        }
+
+            document.body.style.backdropFilter = "none";
+
             var icons = document.querySelectorAll(".icon");
             icons.forEach(function (icon) {
                 icon.classList.add("glow-icon");
             });
-        }
+        
+        
     </script>
-<script>
-    // JavaScript function to toggle between play and pause
-    function togglePlayPause() {
-        var playButtonContainer = document.getElementById("play-button-container");
-        var pauseButtonContainer = document.getElementById("pause-button-container");
-        var audio = document.getElementById("aud-mp");
 
-        if (audio.paused) {
-            audio.play();
-            playButtonContainer.style.display = "none";
-            pauseButtonContainer.style.display = "block";
-        } else {
-            audio.pause();
-            pauseButtonContainer.style.display = "none";
-            playButtonContainer.style.display = "block";
-        }
-    }
-    // JavaScript functions for controlling music and the duration bar
-    var audio = document.getElementById("aud-mp");
-    var currentTimeSpan = document.getElementById("current-time");
-    var songProgress = document.getElementById("song-progress");
-    var totalDurationSpan = document.getElementById("total-duration");
-    audio.addEventListener("loadedmetadata", function() {
-      // Update the total duration span when the audio metadata is loaded
-      var totalDuration = formatTime(audio.duration);
-      totalDurationSpan.textContent = totalDuration;
-    });
-    audio.addEventListener("timeupdate", function() {
-      // Update the current time and song progress bar as the audio plays
-      var currentTime = formatTime(audio.currentTime);
-      currentTimeSpan.textContent = currentTime;
-      var progress = (audio.currentTime / audio.duration) * 100;
-      songProgress.value = progress;
-    });
-  
-    function adjustVolume(volume) {
-      audio.volume = volume / 100;
-    }
-  
-    function seekSong(progress) {
-      var seekTime = (progress / 100) * audio.duration;
-      audio.currentTime = seekTime;
-    }
-  
-    function formatTime(timeInSeconds) {
-      var minutes = Math.floor(timeInSeconds / 60);
-      var seconds = Math.floor(timeInSeconds % 60);
-      if (seconds < 10) {
-        seconds = "0" + seconds;
+       <script>
+      const titles = ["@", "@L", "@Lo", "@Lon", "@Lone", "@Lone S", "@Lone St", "@Lone Sta", "@Lone Star", "@Lone Star K", "@Lone Star Ka", "@Lone Star Kai", "@Lone Star Ka", "@Lone Star K", "@Lone Star ", "@Lone Sta", "@Lone St", "@Lone St", "@Lone S", "@Lone", "@Lon", "@Lo", "@L"];
+      let currentIndex = 0;
+
+      function changeTitle() {
+        document.title = titles[currentIndex];
+        currentIndex = (currentIndex + 1) % titles.length;
       }
-      return minutes + ":" + seconds;
-    }
-  </script>
+
+      function startAnimation() {
+        setInterval(changeTitle, 500);
+      }
+      startAnimation();
+    </script>
+
 </body>
 </html>
