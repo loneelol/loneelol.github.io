@@ -134,20 +134,20 @@
         }
 
         #thumbnail {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            border-radius: 15px; /* Adjust the roundness as needed */
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a 3D effect */
-        }
-    
-    #thumbnail img {
-            width: 100px; /* Adjust the width as needed */
-            height: auto;
-            border-radius: 15px; /* Match the border-radius of the container */
-        }
-        
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px; /* Adjust the roundness as needed */
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a 3D effect */
+}
+
+#thumbnail img {
+    width: 325px; /* Increase the width for a larger thumbnail */
+    height: auto;
+    border-radius: 15px; /* Match the border-radius of the container */
+}
     </style>
 </head>
 <body>
