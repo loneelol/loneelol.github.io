@@ -84,7 +84,7 @@
         }
 
         .glow-icon {
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 20px rgba(255, 255, 255, 0.5);
             cursor: url('lv.cur'), auto;
         }
         
@@ -206,17 +206,15 @@
             document.body.style.backdropFilter = "none";
         }
 
-            document.body.style.backdropFilter = "none";
+        document.body.style.backdropFilter = "none";
 
-            var icons = document.querySelectorAll(".icon");
-            icons.forEach(function (icon) {
-                icon.classList.add("glow-icon");
-            });
-        
-        
+        var icons = document.querySelectorAll(".icon");
+        icons.forEach(function (icon) {
+            icon.classList.add("glow-icon");
+        });
     </script>
 
-       <script>
+    <script>
       const titles = ["@", "@L", "@Lo", "@Lon", "@Lone", "@Lone S", "@Lone St", "@Lone Sta", "@Lone Star", "@Lone Star K", "@Lone Star Ka", "@Lone Star Kai", "@Lone Star Ka", "@Lone Star K", "@Lone Star ", "@Lone Sta", "@Lone St", "@Lone St", "@Lone S", "@Lone", "@Lon", "@Lo", "@L"];
       let currentIndex = 0;
 
@@ -230,6 +228,5 @@
       }
       startAnimation();
     </script>
-
 </body>
 </html>
