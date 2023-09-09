@@ -132,9 +132,28 @@
             margin: 0;
             cursor: url('lv.cur'), auto;
         }
+
+        #thumbnail {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border-radius: 15px; /* Adjust the roundness as needed */
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for a 3D effect */
+        }
+    
+    #thumbnail img {
+            width: 100px; /* Adjust the width as needed */
+            height: auto;
+            border-radius: 15px; /* Match the border-radius of the container */
+        }
+        
     </style>
 </head>
 <body>
+    <div id="thumbnail">
+        <img src="https://i.ytimg.com/vi/PucU3hge_L4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCrElXE61btAAs9q3xS6rQ7cDaGuQ" alt="Thumbnail">
+    </div>
   <link rel="icon" href="https://cdn.hris.rip/gun-solid.svg" type="image/svg+xml">
     <div id="__next">
         <div>
