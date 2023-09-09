@@ -8,8 +8,9 @@
 - [Discord](https://discord.gg/offer)
 - [Cash App](https://lone.lol/cashapp)
 
-[Site](https://lost.lol)
+## Link
 
+[Site](https://lone.lol)
 
 ## Credits
 
