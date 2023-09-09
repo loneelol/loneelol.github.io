@@ -1,1 +1,64 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #111111;
+        }
+        .container {
+            text-align: center;
+            margin: 10px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 20px;
+            border: 4px solid white;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); 
+        }
+        .text {
+            color: white;
+            font-size: 35px;
+            font-family: sans-serif;
+            margin: 10px 0;
+        }
+        .dark-gray-text {
+            color: darkgray;
+            font-size: 24px;
+            font-family: sans-serif;
+            margin: 10px 0; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://cash.app/qr/$lostinfyb?size=288&margin=0" alt="QR Code">
+        <p class="text">headless</p>
+        <p class="dark-gray-text">$lostinfyb</p>
+    </div>
+  <script>
+    const titles = ["@", "@L", "@Lo", "@Lon", "@Lone", "@Lone S", "@Lone St", "@Lone Sta", "@Lone Star", "@Lone Star K", "@Lone Star Ka", "@Lone Star Kai", "@Lone Star Ka", "@Lone Star K", "@Lone Star ", "@Lone Sta", "@Lone St", "@Lone St", "@Lone S", "@Lone", "@Lon", "@Lo", "@L"];
+    let currentIndex = 0;
+
+    function changeTitle() {
+      document.title = titles[currentIndex];
+      currentIndex = (currentIndex + 1) % titles.length;
+    }
+
+    function startAnimation() {
+      setInterval(changeTitle, 500);
+    }
+    startAnimation();
+  </script>
+</body>
+</html>
