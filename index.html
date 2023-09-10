@@ -82,17 +82,14 @@
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
         text-align: center;
         color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), 0 0 5px rgba(255, 255, 255, 0.5);
-        cursor: pointer;
         margin-top: 20px;
         cursor: url('lv.cur'), auto;
+        transition: transform 0.2s ease; /* Added transition property */
       }
-
+      
       #click-to-enter:hover {
-        text-shadow: none;
         transform: scale(1.2);
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
-        cursor: url('lv.cur'), auto;
         user-select: none;
         cursor: url('lv.cur'), auto;
       }
@@ -189,7 +186,14 @@
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
         cursor: url('lv.cur'), auto;
         z-index: 9999;
+        transition: transform 0.2s ease;
       }
+      
+      #icon2:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        user-select: none;
+}
 
       #credits-menu {
         display: none;
@@ -205,6 +209,7 @@
         justify-content: center;
         align-items: center;
       }
+
 
       #credits-content {
         background-color: #111111;
@@ -234,8 +239,10 @@
         color: white;
       }
 
-      #close-button:focus {
-        outline: none;
+      #close-button:hover {
+        transform: scale(1.2);
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        user-select: none;
       }
 
       .credit-descript {
