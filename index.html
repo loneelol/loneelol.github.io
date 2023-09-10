@@ -177,8 +177,94 @@
           padding: 5px;
         }
       }
+
+      #icon2 {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        cursor: url('lv.cur'), auto;
+        z-index: 9999;
+      }
+
+      #credits-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        font-family: 'Calibri', sans-serif;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #credits-content {
+        background-color: #111111;
+        padding: 20px;
+        font-family: 'Calibri', sans-serif;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        max-width: 80%;
+        text-align: center;
+        font-family: 'Calibri', sans-serif;
+        cursor: url('lv.cur'), auto;
+        color: white;
+        position: relative;
+      }
+
+      #close-button {
+        position: absolute;
+        font-family: 'Calibri', sans-serif;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        cursor: url('lv.cur'), auto;
+        top: 10px;
+        right: 10px;
+        user-select: none;
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: white;
+      }
+
+      #close-button:focus {
+        outline: none;
+      }
+
+      .credit-descript {
+        font-size: 18px;
+        font-family: 'Calibri', sans-serif;
+        user-select: none;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        color: white;
+      }
+
+      .credit-title {
+        font-size: 25px;
+        user-select: none;
+        font-family: 'Calibri', sans-serif;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        color: white;
+      }
     </style>
   </head>
+  <div id="icon2">
+    <img data-v-122b71e8="" srcset="https://img.icons8.com/?size=256&amp;id=89684&amp;format=png" width="32" height="32" alt="Credit Icon" class="app-preview__image-origin" style="filter: invert(100%);">
+  </div>
+  <div id="credits-menu">
+    <div id="credits-content">
+      <div id="close-button" onclick="closeCredits()">X</div>
+      <div class="credit-title">
+        <p>Credits</p>
+      </div>
+      <div class="credit-descript">
+        <p>Website Made By: boxmilkskull#1129</p>
+      </div>
+    </div>
+  </div>
   <link rel="icon" href="https://cdn.discordapp.com/attachments/1115455392898613319/1148364346905342082/emote.png" type="image/svg+xml">
   <div id="__next">
     <div>
@@ -273,6 +359,15 @@
       setInterval(changeTitle, 500);
     }
     startAnimation();
+  </script>
+  <script>
+    function openCredits() {
+      document.getElementById("credits-menu").style.display = "flex";
+    }
+    function closeCredits() {
+      document.getElementById("credits-menu").style.display = "none";
+    }
+    document.getElementById("icon2").addEventListener("click", openCredits);
   </script>
   </body>
 </html>
