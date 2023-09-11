@@ -84,9 +84,10 @@
         color: #fff;
         margin-top: 20px;
         cursor: url('lv.cur'), auto;
-        transition: transform 0.2s ease; /* Added transition property */
+        transition: transform 0.2s ease;
+        /* Added transition property */
       }
-      
+
       #click-to-enter:hover {
         transform: scale(1.2);
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
@@ -188,12 +189,12 @@
         z-index: 9999;
         transition: transform 0.2s ease;
       }
-      
+
       #icon2:hover {
         transform: scale(1.2);
         filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
         user-select: none;
-}
+      }
 
       #credits-menu {
         display: none;
@@ -209,7 +210,6 @@
         justify-content: center;
         align-items: center;
       }
-
 
       #credits-content {
         background-color: #111111;
@@ -375,21 +375,26 @@
     function openCredits() {
       document.getElementById("credits-menu").style.display = "flex";
     }
+
     function closeCredits() {
       document.getElementById("credits-menu").style.display = "none";
     }
     document.getElementById("icon2").addEventListener("click", openCredits);
   </script>
   <script>
-        window.addEventListener('contextmenu', function (e) {
-            e.preventDefault();
-        });
-
-        window.addEventListener('keydown', function (e) {
-            if (e.key === 'F12') {
-                e.preventDefault();
-            }
-        });
-    </script>
+    window.addEventListener('contextmenu', function(e) {
+      e.preventDefault();
+    });
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') {
+        e.preventDefault();
+      }
+    });
+    window.addEventListener('keydown', function(e) {
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        e.preventDefault();
+      }
+    });
+  </script>
   </body>
 </html>
