@@ -380,5 +380,16 @@
     }
     document.getElementById("icon2").addEventListener("click", openCredits);
   </script>
+  <script>
+        window.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+
+        window.addEventListener('keydown', function (e) {
+            if (e.key === 'F12') {
+                e.preventDefault();
+            }
+        });
+    </script>
   </body>
 </html>
