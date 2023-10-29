@@ -296,20 +296,22 @@
         <div id="overlay">
           <div id="click-to-enter" onclick="startMusic()">Click to Enter</div>
         </div>
-        <audio id="aud-mp" loop="" autoplay="">
-          <source src="https://cdn.discordapp.com/attachments/1142161400421175387/1150086950942953602/y2mate.is_-_Nba_YoungBoy_I_Ain_t_Scared-PucU3hge_L4-1080pp-1694272470.mp4" type="audio/mpeg"> Your browser does not support the audio element.
-        </audio>
-      </main>
+        <audio id="aud-mp" loop="">
+              <source src="https://cdn.discordapp.com/attachments/1142161400421175387/1150086950942953602/y2mate.is_-_Nba_YoungBoy_I_Ain_t_Scared-PucU3hge_L4-1080pp-1694272470.mp4" type="audio/mpeg"> Your browser does not support the audio element.
+            </audio>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
-  <script>
-    function startMusic() {
-      document.getElementById("overlay").style.display = "none";
-      const audio = document.getElementById("aud-mp");
-      audio.style.display = "block";
-      audio.play();
-      document.body.style.backdropFilter = "none";
-    }
+    <script>
+      function startMusic() {
+        document.getElementById("overlay").style.display = "none";
+        const audio = document.getElementById("aud-mp");
+        audio.style.display = "block";
+        audio.play();
+        document.body.style.backdropFilter = "none";
+      }
+    </script>
   </script>
   <script>
     const titles = ["@", "@L", "@Lo", "@Lon", "@Lone", "@Lone S", "@Lone St", "@Lone Sta", "@Lone Star", "@Lone Star K", "@Lone Star Ka", "@Lone Star Kai", "@Lone Star Ka", "@Lone Star K", "@Lone Star ", "@Lone Sta", "@Lone St", "@Lone St", "@Lone S", "@Lone", "@Lon", "@Lo", "@L"];
