@@ -283,7 +283,7 @@
           </div>
         </div>
         <div id="overlay">
-          <div id="click-to-enter" onclick="startMusic()">click to enter...</div>
+          <div id="click-to-enter" onclick="startMusicLoop()">click to enter...</div>
         </div>
         <audio id="aud-mp" loop>
           <source src="music.mp3" type="audio/mp3"> Your browser does not support the audio element.
@@ -292,24 +292,40 @@
     </div>
   </div>
   <script>
+    const audio = document.getElementById("aud-mp");
+    const audioSources = ["music.mp3", "music2.mp3"];
+    let currentSourceIndex = 0;
+    function startMusicLoop() {
+      document.getElementById("overlay").style.display = "none";
+      audio.style.display = "block";
+      audio.src = audioSources[currentSourceIndex];
+      audio.addEventListener("ended", function () {
+        currentSourceIndex = 1 - currentSourceIndex;
+        audio.src = audioSources[currentSourceIndex];
+        audio.play();
+      });
+
+      audio.play();
+      document.body.style.backdropFilter = "none";
+    }
+  </script>
+  <script>
     function startMusic() {
     document.getElementById("overlay").style.display = "none";
     const audio = document.getElementById("aud-mp");
-    audio.src = "music.mp3"; // Set the audio source
+    audio.src = "music.mp3";
     audio.style.display = "block";
-    audio.play(); // Start playing the audio
+    audio.play();
     document.body.style.backdropFilter = "none";
     const overlay = document.getElementById("overlay");
       const clickBox = document.getElementById("click-box");
       overlay.style.display = "none";
-      const animationDuration = 1000; // Adjust this to control animation speed
+      const animationDuration = 1000;
       clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
-      // Set the initial position off-screen (above the viewport)
-      clickBox.style.transform = "translateY(-100vh)"; // Start above the viewport
-      // Use a setTimeout to start the animation after a slight delay
+      clickBox.style.transform = "translateY(-100vh)";
       setTimeout(function() {
-        clickBox.style.transform = "translateY(10%)"; // Final position (centered)
-      }, 100); // Adjust this delay as needed
+        clickBox.style.transform = "translateY(10%)";
+      }, 100);
     }
   </script>
   </script>
