@@ -32,16 +32,20 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.5);
+        background-color: rgba(0, 0, 0, 0.9);
+        /* Adjust the alpha (0.2) for the desired opacity */
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         z-index: 9999;
         cursor: url('lv.cur'), auto;
+        backdrop-filter: blur(1px);
+        /* Adjust the blur value (10px) for more blur */
       }
 
       #click-box {
+        transform: translateY(-100vh);
         user-select: none;
         text-align: center;
       }
@@ -138,8 +142,7 @@
         }
 
         .username,
-        #quote
-          {
+        #quote {
           font-size: 14px;
           user-select: none;
           margin: 5px;
@@ -226,7 +229,7 @@
     <div>
       <main class="u_ee11cbb19052e40b07aac0ca060c23ee_main-cont__zmSkV">
         <div id="click-box">
-          <img id="profile-picture" src="https://cdn.discordapp.com/attachments/1098051752244297841/1149928600322183199/a_eab7f98560cf37293a88c00e54aa8866.gif" alt="Profile Picture" draggable="false">
+          <img id="profile-picture" src="https://r2.guns.lol/c6a7fe1b-5f97-47df-b52b-ffc76a5a3c91.webp" alt="Profile Picture" draggable="false">
           <p class="username">♰</p>
           <p class="u_ee11cbb19052e40b07aac0ca060c23ee_under__E9n1x u_ee11cbb19052e40b07aac0ca060c23ee_font-r__Fxh_B" id="quote">Train your mind to see solutions, not problems.</p>
           <div class="u_ee11cbb19052e40b07aac0ca060c23ee_dsb__GGRLW" id="discord-widget">
@@ -281,11 +284,10 @@
           </div>
         </div>
         <div id="overlay">
-          <div id="click-to-enter" onclick="startMusic()">click to enter...</div>
+          <div id="click-to-enter" onclick="startAnimation()">click to enter...</div>
         </div>
         <audio id="aud-mp" loop>
-          <source src="music.mp4" type="audio/mp4">
-          Your browser does not support the audio element.
+          <source src="music.mp3" type="audio/mp4"> Your browser does not support the audio element.
         </audio>
       </main>
     </div>
@@ -328,6 +330,21 @@
         e.preventDefault();
       }
     });
+  </script>
+  <script>
+    function startAnimation() {
+      const overlay = document.getElementById("overlay");
+      const clickBox = document.getElementById("click-box");
+      overlay.style.display = "none";
+      const animationDuration = 1000; // Adjust this to control animation speed
+      clickBox.style.transition = `transform ${animationDuration}ms ease-in-out`;
+      // Set the initial position off-screen (above the viewport)
+      clickBox.style.transform = "translateY(-100vh)"; // Start above the viewport
+      // Use a setTimeout to start the animation after a slight delay
+      setTimeout(function() {
+        clickBox.style.transform = "translateY(10%)"; // Final position (centered)
+      }, 100); // Adjust this delay as needed
+    }
   </script>
   </body>
 </html>
